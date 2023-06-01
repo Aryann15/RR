@@ -21,6 +21,13 @@ function App() {
       
       {products.title}
     </li>)
+    
+    //events
+
+    function handleClick(){
+      alert('You Clicked Me!');
+
+    }
   return (
     <div className="App">
       <h1> {user.name}</h1>
@@ -33,6 +40,7 @@ function App() {
           height: user.imageSize,
         }}      />
         <ul>{listItems}</ul>  
+        <button onClick={handleClick}> click me</button>
          </div>
   );
 }
