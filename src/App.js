@@ -2,9 +2,25 @@ const user = {
   name: "heddy lamar",
   imageUrl: "'https://i.imgur.com/yXOvdOSs.jpg",
   imageSize: 90,
-};
+}; 
+
+const products = [{ title: 'Cabbage',isFruit: false, id: 1 },
+{ title: 'Garlic',isFruit: false, id: 2 },
+{ title: 'Apple',isFruit: true, id: 3 },
+];
+
+//use the map() function to transform an array of products into an array of <li> items
 
 function App() {
+
+  const listItems = products.map( products =>
+    <li key={products.id}
+    style={{ 
+      color: products.isFruit ? "red" : "darkgreen"  }}
+    >
+      
+      {products.title}
+    </li>)
   return (
     <div className="App">
       <h1> {user.name}</h1>
@@ -15,9 +31,9 @@ function App() {
         style={{
           width: user.imageSize,
           height: user.imageSize,
-        }}
-      />
-    </div>
+        }}      />
+        <ul>{listItems}</ul>  
+         </div>
   );
 }
 
