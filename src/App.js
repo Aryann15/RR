@@ -1,3 +1,5 @@
+import {useState} from "react"
+
 const user = {
   name: "heddy lamar",
   imageUrl: "'https://i.imgur.com/yXOvdOSs.jpg",
@@ -13,6 +15,14 @@ const products = [{ title: 'Cabbage',isFruit: false, id: 1 },
 
 function App() {
 
+  const [count,setCount]= useState(0)
+
+  function increment(){
+    setCount ( count +1)
+  }
+  function decrement(){
+    setCount(count -1)
+  } 
   const listItems = products.map( products =>
     <li key={products.id}
     style={{ 
@@ -39,7 +49,11 @@ function App() {
           width: user.imageSize,
           height: user.imageSize,
         }}      />
+
+      //rendering list
         <ul>{listItems}</ul>  
+//responding events
+        
         <button onClick={handleClick}> click me</button>
          </div>
   );
